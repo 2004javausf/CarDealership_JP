@@ -1,0 +1,34 @@
+Employee Table - Needs User Table
+	-employee_id
+	-firstName
+	-lastName
+	-user_id - FK to user table
+	
+Customer Table - needs User Table and Address Table
+	-customer_id
+	-firstName
+	-lastName
+	-address_id-FK to address table
+	-user_id - FK to user table
+	-car_id - FK to car table
+	
+Car Table - Independent
+	-car_id
+	-make
+	-model
+	-year
+	-isOwned
+	-value
+	
+User Table - 1st table created
+	-user_id
+	-userName - unique Key
+	-password
+	-emp_status
+	
+Address Table - 2nd to be created
+	-address_id
+	-streetName
+	-city
+	-zip
+	
