@@ -4,7 +4,7 @@ Employee Table - Needs User Table
 	-lastName
 	-user_id - FK to user table
 	
-Customer Table - needs User Table and Address Table
+Customer Table - needs User Table, Address Table, and Car Table.
 	-customer_id
 	-firstName
 	-lastName
@@ -32,3 +32,39 @@ Address Table - 2nd to be created
 	-city
 	-zip
 	
+	
+AWS Endpoint:
+	
+	Car Dealer: car-dealership.cxszkh9udppk.us-east-2.rds.amazonaws.com
+	
+	usf2004jp: java2004jp.cxszkh9udppk.us-east-2.rds.amazonaws.com
+	
+	Creds:
+	jpark1914
+	Park1678627!
+	
+	============================================
+	===========Database Stuff===================
+	============================================
+	
+	DROP USER jpark1914 CASCADE;
+
+
+/*******************************************************************************
+   Create database
+********************************************************************************/
+CREATE USER jpark1914
+IDENTIFIED BY Park1678627!
+DEFAULT TABLESPACE users
+TEMPORARY TABLESPACE temp
+QUOTA 10M ON users;
+
+GRANT connect to jpark1914;
+GRANT resource to jpark1914;
+GRANT create session TO jpark1914;
+GRANT create table TO jpark1914;
+GRANT create view TO jpark1914;
+
+
+
+conn jpark1914/Park1678627!

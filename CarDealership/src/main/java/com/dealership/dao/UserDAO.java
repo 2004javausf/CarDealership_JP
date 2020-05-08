@@ -1,5 +1,9 @@
 package com.dealership.dao;
 
-public interface UserDAO {
+import java.sql.SQLException;
 
+public interface UserDAO {
+	
+	//CREATE METHODS
+	public void createUser() throws SQLException;
 }

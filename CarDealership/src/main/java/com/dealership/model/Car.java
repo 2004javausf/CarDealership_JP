@@ -6,7 +6,7 @@ public class Car {
 	private String make;
 	private String model;
 	private int year;
-	private boolean isOwned;
+	private String isOwned;
 	private int value;
 	
 	public Car() {
@@ -14,7 +14,7 @@ public class Car {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Car(int car_id, String make, String model, int year, boolean isOwned, int value) {
+	public Car(int car_id, String make, String model, int year, String isOwned, int value) {
 		super();
 		this.car_id = car_id;
 		this.make = make;
@@ -56,11 +56,11 @@ public class Car {
 		this.year = year;
 	}
 
-	public boolean isOwned() {
+	public String getIsOwned() {
 		return isOwned;
 	}
-
-	public void setOwned(boolean isOwned) {
+	
+	public void setIsOwned(String isOwned) {
 		this.isOwned = isOwned;
 	}
 
