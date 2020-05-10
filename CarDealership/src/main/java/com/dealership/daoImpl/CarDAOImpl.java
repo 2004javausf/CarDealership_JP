@@ -52,8 +52,7 @@ public class CarDAOImpl implements CarDAO {
 /*----------------------------------
 ------------VIEW CARS---------------
 ------------------------------------*/
-	
-	
+
 	@Override
 	public List<Car> viewCars() throws SQLException {
 		List<Car> carList = new ArrayList<Car>();
