@@ -10,3 +10,10 @@
 [INFO ] 2020-05-08 17:44:51.797 [main] DealershipLog - User has been added to DB
 [INFO ] 2020-05-08 17:47:54.697 [main] DealershipLog - User has been added to DB
 [INFO ] 2020-05-09 21:13:05.136 [main] DealershipLog - Customer has been created and stored in the database.
+[INFO ] 2020-05-10 09:54:36.683 [main] DealershipLog - Customer has been created and stored in the database.
+[INFO ] 2020-05-10 09:56:19.666 [main] DealershipLog - Employee has been created and stored in the database.
+[INFO ] 2020-05-10 10:04:43.102 [main] DealershipLog - Employee has been created and stored in the database.
+[INFO ] 2020-05-10 12:12:42.202 [main] DealershipLog - Employee has been retrieved fromt the database.
+[INFO ] 2020-05-10 12:18:08.974 [main] DealershipLog - Employee has been retrieved fromt the database.
+[INFO ] 2020-05-10 12:18:56.806 [main] DealershipLog - Employee has been retrieved fromt the database.
+[INFO ] 2020-05-10 12:46:58.443 [main] DealershipLog - Employee has been retrieved fromt the database.

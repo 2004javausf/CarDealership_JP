@@ -1,12 +1,12 @@
 package com.dealership.driver;
 
-import java.util.Scanner;
-
-import com.dealership.daoImpl.CustomerDAOImpl;
-import com.dealership.menu.CustomerMenu;
+import com.dealership.dao.OfferDAO;
+import com.dealership.daoImpl.OfferDAOImpl;
 
 public class Driver {
 	public static void main(String[] args) {
-		CustomerMenu.createCustomer();
+		//MainMenu.start();
+		OfferDAO odi = new OfferDAOImpl();
+		odi.makeOffer(2300, 1,4);
 	}
 }
