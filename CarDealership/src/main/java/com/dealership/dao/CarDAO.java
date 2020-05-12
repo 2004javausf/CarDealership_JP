@@ -7,6 +7,7 @@ import com.dealership.model.Car;
 
 public interface CarDAO {
 	public void createCar(Car car) throws SQLException;
-	public List<Car>viewCars() throws SQLException;
+	public List<Car>viewCars();
+	public List<Car>viewUsersCars(int customer_id);
 
 }

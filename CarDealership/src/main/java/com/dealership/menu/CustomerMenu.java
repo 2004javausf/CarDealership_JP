@@ -2,7 +2,9 @@ package com.dealership.menu;
 
 import java.util.Scanner;
 
+import com.dealership.dao.CustomerDAO;
 import com.dealership.daoImpl.CustomerDAOImpl;
+import com.dealership.model.Customer;
 
 public class CustomerMenu {
 	
@@ -38,5 +40,53 @@ public class CustomerMenu {
 		customerImpl.createCustomer(firstName, lastName, userName, password, streetName, city, zip);
 		System.out.println("Welcome " + firstName);
 	}
+	
+	public static void customerMain() {
+		CustomerDAO cdi = new CustomerDAOImpl();
+		Scanner txt = new Scanner(System.in);
+		Scanner integer = new Scanner(System.in);
+		
+		String user;
+		String pass;
+		
+		System.out.println("What is your username?");
+		user = txt.nextLine();
+		System.out.println("What is your password?");
+		pass = txt.nextLine();
+		Customer customer = cdi.getCustomer(user, pass);
+		System.out.println("What would you like to do " + customer.getFirstName() + "?");
+		System.out.println(
+				"1.) View Cars \n"
+				+ "2.) Make an offer \n"
+				+ "3.) View your cars \n"
+				+ "4.) View all payments \n"
+				+ "5.) Main Menu \n");
+		int choice = integer.nextInt();
+		switch (choice) {
+		case 1:
+			CarMenu.viewAllCars();
+			System.out.println("Press any key then enter.");
+			String nothing = txt.next();
+			customerMain();
+			break;
+		case 2:
+			CarMenu.makeAnOffer(customer);
+			customerMain();
+			break;
+		case 3:
+			CarMenu.viewMyCars(customer);
+			break;
+		case 4:
+			
+			break;
+		case 5:
+			MainMenu.start();
+			break;
+
+		default:
+			break;
+		}
+		
+	};
 
 }

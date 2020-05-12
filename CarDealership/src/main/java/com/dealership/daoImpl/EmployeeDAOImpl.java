@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.dealership.dao.EmployeeDAO;
+import com.dealership.menu.MainMenu;
 import com.dealership.model.Employee;
 import com.dealership.util.ConnConfig;
 import com.dealership.util.DealershipLog;
@@ -59,11 +60,15 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 				employee.setLastName(rs.getString("last_name"));
 				employee.setUser_id(rs.getInt("user_id"));
 			}
+			if(employee.getEmployee_id() == 0) {
+				throw new SQLException("Username and password does not exist.");
+			}
 			
 			DealershipLog.LogIt("info", "Employee has been retrieved fromt the database.");
 			
 			} catch(SQLException e) {
-				e.printStackTrace();
+				System.out.println(e.getMessage());
+				MainMenu.start();
 			}finally {
 				closeResources();
 			}

@@ -7,8 +7,9 @@ public class Customer {
 	private int address_id;
 	private int user_id;
 	private int car_id;
+	private int offer_id;
 	
-	public Customer(int customer_id, String firstName, String lastName, int address_id, int user_id, int car_id) {
+	public Customer(int customer_id, String firstName, String lastName, int address_id, int user_id, int car_id, int offer_id) {
 		super();
 		this.customer_id = customer_id;
 		this.firstName = firstName;
@@ -16,6 +17,7 @@ public class Customer {
 		this.address_id = address_id;
 		this.user_id = user_id;
 		this.car_id = car_id;
+		this.setOffer_id(offer_id);
 	}
 	
 	
@@ -61,10 +63,22 @@ public class Customer {
 	public void setCar_id(int car_id) {
 		this.car_id = car_id;
 	}
+
+	public int getOffer_id() {
+		return offer_id;
+	}
+
+
+	public void setOffer_id(int offer_id) {
+		this.offer_id = offer_id;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Customer [customer_id=" + customer_id + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", address_id=" + address_id + ", user_id=" + user_id + ", car_id=" + car_id + "]";
+				+ ", address_id=" + address_id + ", user_id=" + user_id + ", car_id=" + car_id + ", offer_id="
+				+ offer_id + "]";
 	}
 	
 	

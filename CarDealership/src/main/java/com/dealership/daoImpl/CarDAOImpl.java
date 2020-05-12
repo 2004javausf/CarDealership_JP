@@ -27,15 +27,14 @@ public class CarDAOImpl implements CarDAO {
 	public void createCar(Car car) throws SQLException {
 		try {
 			connection = cc.getConnection();
-			String sql = "INSERT INTO CARS VALUES(?,?,?,?,?,?)";
+			String sql = "INSERT INTO CARS VALUES(car_sequence.nextval,?,?,?,?,?, null)";
 			stmt = connection.prepareStatement(sql);
 			
-			stmt.setInt(1, car.getCar_id());
-			stmt.setString(2, car.getMake());
-			stmt.setString(3, car.getModel());
-			stmt.setInt(4, car.getYear());
-			stmt.setString(5, car.getIsOwned());
-			stmt.setInt(6, car.getValue());
+			stmt.setString(1, car.getMake());
+			stmt.setString(2, car.getModel());
+			stmt.setInt(3, car.getYear());
+			stmt.setString(4, car.getIsOwned());
+			stmt.setInt(5, car.getValue());
 			
 			stmt.executeUpdate();
 			
@@ -54,7 +53,7 @@ public class CarDAOImpl implements CarDAO {
 ------------------------------------*/
 
 	@Override
-	public List<Car> viewCars() throws SQLException {
+	public List<Car> viewCars(){
 		List<Car> carList = new ArrayList<Car>();
 		try {
 			connection = cc.getConnection();
@@ -84,7 +83,42 @@ public class CarDAOImpl implements CarDAO {
 		return carList;
 	}
 	
+/*----------------------------------
+-----------VIEW USERS CARS----------
+------------------------------------*/
 	
+	
+	@Override
+	public List<Car> viewUsersCars(int customer_id){
+		List<Car> carList = new ArrayList<Car>();
+		try {
+			connection = cc.getConnection();
+			String sql = "SELECT * FROM CARS WHERE CUSTOMER_ID = ?";
+			stmt = connection.prepareStatement(sql);
+			stmt.setInt(1, customer_id);
+			ResultSet rs = stmt.executeQuery();
+			
+			//When getting the result set you must grab the
+					//COLUMN NAMES
+			while(rs.next()) {
+				Car car = new Car();
+				car.setCar_id(rs.getInt("car_id"));
+				car.setMake(rs.getString("make"));
+				car.setModel(rs.getString("car_model"));
+				car.setYear(rs.getInt("car_year"));
+				car.setIsOwned(rs.getString("is_Owned"));
+				car.setValue(rs.getInt("car_value"));
+				
+				carList.add(car);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeResources();
+		}
+		return carList;
+	}
 	
 /*-----------------------------------------------------------------------------*/	
 	

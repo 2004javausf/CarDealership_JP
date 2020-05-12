@@ -8,13 +8,11 @@ public class Car {
 	private int year;
 	private String isOwned;
 	private int value;
+	private int customer_id;
 	
-	public Car() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
-	public Car(int car_id, String make, String model, int year, String isOwned, int value) {
+
+	public Car(int car_id, String make, String model, int year, String isOwned, int value, int customer_id) {
 		super();
 		this.car_id = car_id;
 		this.make = make;
@@ -22,6 +20,12 @@ public class Car {
 		this.year = year;
 		this.isOwned = isOwned;
 		this.value = value;
+		this.customer_id = customer_id;
+	}
+
+	public Car() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getCar_id() {
@@ -72,11 +76,20 @@ public class Car {
 		this.value = value;
 	}
 
+	public int getCustomer_id() {
+		return customer_id;
+	}
+
+	public void setCustomer_id(int customer_id) {
+		this.customer_id = customer_id;
+	}
+
 	@Override
 	public String toString() {
-		return "Car [car_id=" + car_id + ", make=" + make + ", model=" + model + ", year=" + year + ", isOwned="
-				+ isOwned + ", value=" + value + "]";
+		return "Car [car_id=" + car_id + ", make=" + make + ", model=" + model + ", year=" + year + ", value=" + value + "] \n";
 	}
+	
+	
 	
 	
 }
