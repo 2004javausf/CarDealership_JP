@@ -5,14 +5,19 @@ public class Offer {
 	private int offer;
 	private int car_id;
 	private int customer_id;
+	private String offer_status;
 	
 	
-	public Offer(int offer_id, int offer, int car_id, int customer_id) {
+
+
+
+	public Offer(int offer_id, int offer, int car_id, int customer_id, String offer_status) {
 		super();
 		this.offer_id = offer_id;
 		this.offer = offer;
 		this.car_id = car_id;
 		this.customer_id = customer_id;
+		this.offer_status = offer_status;
 	}
 
 
@@ -60,13 +65,24 @@ public class Offer {
 	public void setCustomer_id(int customer_id) {
 		this.customer_id = customer_id;
 	}
+	
+
+	public String getOffer_status() {
+		return offer_status;
+	}
+
+
+	public void setOffer_status(String offer_status) {
+		this.offer_status = offer_status;
+	}
 
 
 	@Override
 	public String toString() {
 		return "Offer [offer_id=" + offer_id + ", offer=" + offer + ", car_id=" + car_id + ", customer_id="
-				+ customer_id + "]";
+				+ customer_id + ", offer_status=" + offer_status + "] \n";
 	}
+
 	
 	
 }

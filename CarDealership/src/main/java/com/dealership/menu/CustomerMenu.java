@@ -71,10 +71,11 @@ public class CustomerMenu {
 			break;
 		case 2:
 			CarMenu.makeAnOffer(customer);
-			customerMain();
+			MainMenu.start();
 			break;
 		case 3:
 			CarMenu.viewMyCars(customer);
+			MainMenu.start();
 			break;
 		case 4:
 			

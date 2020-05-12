@@ -72,6 +72,10 @@ public class CarMenu {
 		System.out.println("Your offer has been placed!");
 	}
 	
+	public static void acceptOffer() {
+		System.out.println();
+	}
+	
 	public static void viewMyCars(Customer customer) {
 		CarDAOImpl cardi = new CarDAOImpl();
 		List<Car> cars = cardi.viewUsersCars(customer.getCustomer_id());

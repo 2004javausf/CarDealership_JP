@@ -9,5 +9,6 @@ public interface CarDAO {
 	public void createCar(Car car) throws SQLException;
 	public List<Car>viewCars();
 	public List<Car>viewUsersCars(int customer_id);
+	public void removeCar(int car_id);
 
 }

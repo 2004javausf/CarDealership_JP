@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.dealership.menu.MainMenu;
 import com.dealership.daoImpl.EmployeeDAOImpl;
+import com.dealership.daoImpl.OfferDAOImpl;
 import com.dealership.model.Employee;
 
 public class EmployeeMenu {
@@ -61,7 +62,17 @@ public class EmployeeMenu {
 			CarMenu.addToLot();
 			break;
 		case 2:
+			OfferDAOImpl odi = new OfferDAOImpl();
+			System.out.println(odi.viewOffers());
+			System.out.println("Please enter the ID of the Car you would like approve or deny.");
+			int car_id = integer.nextInt();
+			System.out.println("Please enter the Customer ID of whom you would like to approve or deny.");
+			int customer_id = integer.nextInt();
+			System.out.println("Would you like to Approve or Deny this offer? ");
+			String offer_status = txt.nextLine();
+			odi.acceptOffer(offer_status, customer_id, car_id);
 			
+			MainMenu.start();
 			break;
 		case 3:
 			

@@ -119,6 +119,25 @@ public class CarDAOImpl implements CarDAO {
 		}
 		return carList;
 	}
+/*----------------------------------
+-----------DELETE CAR---------------
+------------------------------------*/
+	
+	@Override
+	public void removeCar(int car_id) {
+		try {
+		connection = cc.getConnection();
+		String sql = "DELETE FROM CARS WHERE CAR_ID = ?";
+		stmt = connection.prepareStatement(sql);
+		stmt.setInt(1, car_id);
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			closeResources();
+		}
+		
+		
+	}
 	
 /*-----------------------------------------------------------------------------*/	
 	
@@ -144,6 +163,8 @@ public class CarDAOImpl implements CarDAO {
 			e.printStackTrace();
 		}
 	}
+
+
 
 
 
