@@ -13,7 +13,7 @@ public class MainMenu {
 		Scanner txt = new Scanner(System.in);
 		Scanner integer = new Scanner(System.in);
 		
-		System.out.println("Welcome to the main menu!");
+		System.out.println("Welcome to the Small Lot!");
 		System.out.println("Are you an 1.)Employee 2.)Customer 3.)Register");
 		int choice = integer.nextInt();
 		switch (choice) {
