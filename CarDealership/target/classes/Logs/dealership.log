@@ -128,3 +128,11 @@
 [INFO ] 2020-05-12 22:13:39.016 [main] DealershipLog - Car has been deleted
 [INFO ] 2020-05-12 23:19:51.687 [main] DealershipLog - Customer has been retrieved fromt the database.
 [INFO ] 2020-05-12 23:23:50.360 [main] DealershipLog - Customer has been retrieved fromt the database.
+[INFO ] 2020-05-12 23:31:24.587 [main] DealershipLog - Employee has been retrieved fromt the database.
+[INFO ] 2020-05-12 23:33:12.249 [main] DealershipLog - Customer has been retrieved from the database.
+[INFO ] 2020-05-12 23:40:40.995 [main] DealershipLog - Customer has been retrieved from the database.
+[INFO ] 2020-05-12 23:52:59.434 [main] DealershipLog - Customer has been retrieved from the database.
+[INFO ] 2020-05-12 23:53:36.063 [main] DealershipLog - Customer has been retrieved from the database.
+[INFO ] 2020-05-12 23:54:02.890 [main] DealershipLog - Customer has been retrieved from the database.
+[INFO ] 2020-05-12 23:54:59.820 [main] DealershipLog - Employee has been retrieved fromt the database.
+[INFO ] 2020-05-12 23:56:26.920 [main] DealershipLog - Offer has been accepted.
