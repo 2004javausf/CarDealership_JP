@@ -109,11 +109,6 @@ conn jpark1914/Park1678627!
 	
 
 
-==============================================
-Write a method that takes in an Offer Object
-Within that method take the car_id.is_owned and change it to "yes"
-if is_owned is set to "yes" then delete all other offers on the corresponding
-car_id.
 
 
 

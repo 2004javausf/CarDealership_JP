@@ -130,6 +130,9 @@ public class CarDAOImpl implements CarDAO {
 		String sql = "DELETE FROM CARS WHERE CAR_ID = ?";
 		stmt = connection.prepareStatement(sql);
 		stmt.setInt(1, car_id);
+		stmt.executeUpdate();
+		
+		DealershipLog.LogIt("info", "Car has been deleted");
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {

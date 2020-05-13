@@ -2,7 +2,10 @@ package com.dealership.menu;
 
 import java.util.Scanner;
 
+import com.dealership.dao.CustomerDAO;
+import com.dealership.daoImpl.CustomerDAOImpl;
 import com.dealership.daoImpl.EmployeeDAOImpl;
+import com.dealership.model.Customer;
 import com.dealership.model.Employee;
 
 public class MainMenu {
@@ -17,10 +20,29 @@ public class MainMenu {
 		
 		//EmployeeMenu
 		case 1:
-			EmployeeMenu.employeeMain();
+			EmployeeDAOImpl edi = new EmployeeDAOImpl();
+			
+			String user;
+			String pass;
+			
+			System.out.println("What is your username?");
+			user = txt.nextLine();
+			System.out.println("What is your password?");
+			pass = txt.nextLine();
+			Employee employee = edi.getEmployee(user, pass);
+			EmployeeMenu.employeeMain(employee);
 			break;
 		case 2:
-			CustomerMenu.customerMain();
+			CustomerDAO cdi = new CustomerDAOImpl();
+			String username;
+			String password;
+			
+			System.out.println("What is your username?");
+			username = txt.nextLine();
+			System.out.println("What is your password?");
+			password = txt.nextLine();
+			Customer customer = cdi.getCustomer(username, password);
+			CustomerMenu.customerMain(customer);
 			break;
 		case 3:
 			System.out.println("Are you registering as 1.)Customer   OR   2.)Employee");

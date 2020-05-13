@@ -74,7 +74,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 					throw new SQLException("Username or password does not exist.");
 				}
 				
-				DealershipLog.LogIt("info", "Customer has been retrieved fromt the database.");
+				DealershipLog.LogIt("info", "Customer has been retrieved from the database.");
 				
 				} catch(SQLException e) {
 					System.out.println(e.getMessage());

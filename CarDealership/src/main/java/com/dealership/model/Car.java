@@ -86,7 +86,7 @@ public class Car {
 
 	@Override
 	public String toString() {
-		return "Car [car_id=" + car_id + ", make=" + make + ", model=" + model + ", year=" + year + ", value=" + value + "] \n";
+		return "Car [car_id=" + car_id + ", make=" + make + ", model=" + model + ", year=" + year + ", value=" + value + ", owned=" + isOwned + "] \n";
 	}
 	
 	

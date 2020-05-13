@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.dealership.dao.CustomerDAO;
 import com.dealership.daoImpl.CustomerDAOImpl;
 import com.dealership.model.Customer;
+import com.dealership.service.PaymentMethods;
 
 public class CustomerMenu {
 	
@@ -41,50 +42,56 @@ public class CustomerMenu {
 		System.out.println("Welcome " + firstName);
 	}
 	
-	public static void customerMain() {
-		CustomerDAO cdi = new CustomerDAOImpl();
+	public static void customerMain(Customer customer) {
+		
 		Scanner txt = new Scanner(System.in);
 		Scanner integer = new Scanner(System.in);
-		
-		String user;
-		String pass;
-		
-		System.out.println("What is your username?");
-		user = txt.nextLine();
-		System.out.println("What is your password?");
-		pass = txt.nextLine();
-		Customer customer = cdi.getCustomer(user, pass);
+
 		System.out.println("What would you like to do " + customer.getFirstName() + "?");
 		System.out.println(
 				"1.) View Cars \n"
 				+ "2.) Make an offer \n"
 				+ "3.) View your cars \n"
 				+ "4.) View all payments \n"
-				+ "5.) Main Menu \n");
+				+ "5.) Make Your Payment \n"
+				+ "6.) Main Menu \n");
 		int choice = integer.nextInt();
 		switch (choice) {
 		case 1:
 			CarMenu.viewAllCars();
 			System.out.println("Press any key then enter.");
 			String nothing = txt.next();
-			customerMain();
+			customerMain(customer);
 			break;
 		case 2:
 			CarMenu.makeAnOffer(customer);
-			MainMenu.start();
+			customerMain(customer);
 			break;
 		case 3:
 			CarMenu.viewMyCars(customer);
-			MainMenu.start();
+			customerMain(customer);
 			break;
 		case 4:
-			
+			PaymentMenu.viewMyPayments(customer.getCustomer_id());
+			customerMain(customer);
 			break;
 		case 5:
+			System.out.println("Which payment would you like to handle?");
+			PaymentMenu.viewMyPayments(customer.getCustomer_id());
+			System.out.println("Please enter the id of the payment.");
+			int payment_id = integer.nextInt();
+			System.out.println("Please enter the amount you would like to pay.");
+			int amount  = integer.nextInt();
+			PaymentMethods.subtractPayment(payment_id, amount);
+			customerMain(customer);
+			break;
+		case 6:
 			MainMenu.start();
 			break;
 
 		default:
+			System.out.println("Not a valid input.");
+			customerMain(customer);
 			break;
 		}
 		
